@@ -30,4 +30,14 @@
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+}
+.li-style {
+  list-style-type: none;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid gainsboro;
+}
+.App-header ul {
+  display: flex;
 }
