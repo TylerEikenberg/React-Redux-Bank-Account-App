@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 function DepositPage() {
   // get balance from state
   const balance = useSelector(state => state.balanceReducer.balance);
+  const loan = useSelector(state => state.loanReducer.loan);
   // create dispatch using useDispatch()
   const dispatch = useDispatch();
 
@@ -19,6 +20,7 @@ function DepositPage() {
     <div>
       <h1 style={{ color: "#61dafb" }}>Balance ${balance}</h1>
       <button onClick={onDepositHandle}>Deposit</button>
+      <h2>{loan ? "Loan Applied" : "Loan Needed"}</h2>
     </div>
   );
 }
