@@ -1,11 +1,11 @@
 import React from "react";
 
-function depositPage() {
+function DepositPage() {
   return (
     <div>
-      <h1 style={{ color: "gray" }}>Deposit Page</h1>
+      <h1 style={{ color: "#61dafb" }}>Deposit Page</h1>
     </div>
   );
 }
 
-export default depositPage;
+export default DepositPage;

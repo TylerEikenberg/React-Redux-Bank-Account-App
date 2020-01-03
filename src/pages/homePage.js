@@ -5,12 +5,14 @@ import React from "react";
  */
 import { useSelector } from "react-redux";
 
-function homePage() {
+function HomePage() {
+  // useSelector allows us to access our state from the store
+  const balance = useSelector(state => state.balance);
   return (
     <div>
-      <h1 style={{ color: "red" }}>Home Page</h1>
+      <h1 style={{ color: "#61dafb" }}>Balance: {balance}</h1>
     </div>
   );
 }
 
-export default homePage;
+export default HomePage;

@@ -1,11 +1,11 @@
 import React from "react";
 
-function withdrawPage() {
+function WithdrawPage() {
   return (
     <div>
-      <h1 style={{ color: "blue" }}>Withdraw Page</h1>
+      <h1 style={{ color: "#61dafb" }}>Withdraw Page</h1>
     </div>
   );
 }
 
-export default withdrawPage;
+export default WithdrawPage;
