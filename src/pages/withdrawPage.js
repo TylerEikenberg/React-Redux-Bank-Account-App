@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 function WithdrawPage() {
   // get balance from state
-  const balance = useSelector(state => state.balance);
+  const balance = useSelector(state => state.balanceReducer.balance);
   // create dispatch using useDispatch()
   const dispatch = useDispatch();
 

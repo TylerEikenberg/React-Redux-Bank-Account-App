@@ -13,20 +13,20 @@ const initialState = {
  * Based on the action it will modify the state
  */
 
-function reducer(state = initialState, action) {
+function balanceReducer(state = initialState, action) {
   switch (action.type) {
     case "DEPOSIT":
-      // this is returning a copy of the state with the    payload added to it
+      // this is returning a copy of the state with the payload added to it
       return { balance: state.balance + action.payload };
     case "WITHDRAW":
-      // this is returning a copy of the state with the    payload subtracted from it
+      // this is returning a copy of the state with the payload subtracted from it
       return { balance: state.balance - action.payload };
     default:
       return state;
   }
 }
 
-export default reducer;
+export default balanceReducer;
 
 /**
  * Next, go to index.js
