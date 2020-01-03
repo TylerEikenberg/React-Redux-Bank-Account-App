@@ -14,13 +14,15 @@ import * as serviceWorker from "./serviceWorker";
 /**
  * import applyMiddleware
  */
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import balanceReducer from "./store/balanceReducer";
 import loanReducer from "./store/loanReducer";
 import { Provider } from "react-redux";
 
 // import thunk
 import thunk from "redux-thunk";
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 // Start by creating the store using createStore and passing our reducer to it
 // This store manages the entire apps state
@@ -33,7 +35,7 @@ const store = createStore(
     balanceReducer,
     loanReducer
   }),
-  applyMiddleware(thunk)
+  composeEnhancer(applyMiddleware(thunk))
 );
 
 // Next, wrap <App> with <Provider> and pass our store as a prop

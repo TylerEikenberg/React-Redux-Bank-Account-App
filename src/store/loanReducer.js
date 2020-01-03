@@ -5,7 +5,8 @@
  */
 
 const initialState = {
-  loan: false
+  loan: false,
+  loading: false
 };
 
 /**
@@ -16,7 +17,9 @@ const initialState = {
 function loanReducer(state = initialState, action) {
   switch (action.type) {
     case "APPLY":
-      return { loan: true };
+      return { loan: true, loading: false };
+    case "LOADING":
+      return { ...state, loading: true };
     default:
       return state;
   }
