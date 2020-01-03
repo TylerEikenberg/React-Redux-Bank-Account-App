@@ -10,20 +10,30 @@ import * as serviceWorker from "./serviceWorker";
  * import the reducer we made from from the store dir
  * import Provider from react-redux
  */
-import { createStore, combineReducers } from "redux";
+
+/**
+ * import applyMiddleware
+ */
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import balanceReducer from "./store/balanceReducer";
 import loanReducer from "./store/loanReducer";
 import { Provider } from "react-redux";
+
+// import thunk
+import thunk from "redux-thunk";
 
 // Start by creating the store using createStore and passing our reducer to it
 // This store manages the entire apps state
 
 // combine reducers by passing them in the store using combineReducers and putting them together into one object
+
+// pass applyMiddleware as second arg to store, pass thunk to applyMiddleware
 const store = createStore(
   combineReducers({
     balanceReducer,
     loanReducer
-  })
+  }),
+  applyMiddleware(thunk)
 );
 
 // Next, wrap <App> with <Provider> and pass our store as a prop

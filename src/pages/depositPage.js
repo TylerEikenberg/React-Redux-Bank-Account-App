@@ -5,6 +5,9 @@ import React from "react";
  */
 import { useSelector, useDispatch } from "react-redux";
 
+// import actions
+import * as balanceActions from "./../actions/balanceActions";
+
 function DepositPage() {
   // get balance from state
   const balance = useSelector(state => state.balanceReducer.balance);
@@ -12,9 +15,9 @@ function DepositPage() {
   // create dispatch using useDispatch()
   const dispatch = useDispatch();
 
-  // we need to dispatch the action type and payload
+  // we need to dispatch the depositAsync action we imported from our balanceActions
   function onDepositHandle() {
-    dispatch({ type: "DEPOSIT", payload: 10 });
+    dispatch(balanceActions.depositAsync());
   }
   return (
     <div>
